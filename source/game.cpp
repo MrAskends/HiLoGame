@@ -17,7 +17,7 @@ namespace Game
 	{
 		while (IO::getChar() == 'y')
 		{
-			system("cls"); // Clears the console screen
+			system("cls"); // Clears the console screen !ONLY ON WINDOWS!
 			runGameLoop();
 			IO::printDoYouWantToPlayMessage();
 		}
@@ -29,6 +29,11 @@ namespace Game
 	{
 		int remainingAttempts{ Constants::max_attempts }; // Number of tries left
 		const int secretNumber{ Random::get(Constants::min, Constants::max) }; // Random number to guess
+
+#ifdef DEBUG_MODE
+		IO::printDebugSecretNumberMessage(secretNumber);
+#endif
+
 		IO::printGameWasStartedMessage();
 		while (remainingAttempts > 0)
 		{

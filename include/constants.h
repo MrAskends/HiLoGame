@@ -4,7 +4,7 @@
 namespace Constants
 {
 	// Welcome message shown at the beginning of the game
-	constexpr std::string_view greetingsMessage{ "Hello! Lets play the game! You have to guess the number I pick from " };
+	constexpr std::string_view greetingsMessage{ "Hello! Let's play the game! You have to guess the number I pick from " };
 
 	// Prompt asking if the user wants to play
 	constexpr std::string_view doYouWantToPlayMessage{ "Do you want to play? Write \"y\" or \"n\" : " };
@@ -32,6 +32,14 @@ namespace Constants
 
 	// Message shown when the user chooses to exit the game
 	constexpr std::string_view exitMessage{ "Leaving already? Too bad! Hope you had fun!" };
+
+	// Welcome message shown at the beginning of the game
+	constexpr std::string_view errorOutOfRangeMessage{ "Out of range! Please enter a number within the valid range." };
+
+	// Welcome message shown at the beginning of the game
+	constexpr std::string_view errorWrongSymbolMessage{ "Oops, that input is invalid :( Please try again." };
+
+	constexpr std::string_view debugShowSecretNumberMessage{ "The secret number is: " };
 
 	// Minimum number for the random range
 	constexpr int min{ 1 };

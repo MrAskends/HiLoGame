@@ -31,4 +31,6 @@ namespace IO
 
 	// Prints the exit message when the player chooses not to play again
 	void printExitMessage();
+
+	void printDebugSecretNumberMessage(const int secretNumber);
 }

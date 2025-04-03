@@ -40,7 +40,12 @@ namespace IO
 			std::cin >> userNumber;
 			if (clearFailedExtraction())
 			{
-				std::cout << "Oops, that input is invalid :( Please try again.\n";
+				std::cout << Constants::errorWrongSymbolMessage << '\n';
+				continue;
+			}
+			if (userNumber < Constants::min || userNumber > Constants::max)
+			{
+				std::cout << Constants::errorOutOfRangeMessage << '\n';
 				continue;
 			}
 			ignoreLine(); // Remove any extraneous input
@@ -63,7 +68,7 @@ namespace IO
 			case 'n':
 				return userChar;
 			default:
-				std::cout << "Oops, that input is invalid :( Please try again.\n";
+				std::cout << Constants::errorWrongSymbolMessage << '\n';
 			}
 		}
 	}
@@ -115,5 +120,11 @@ namespace IO
 	void printExitMessage()
 	{
 		std::cout << Constants::exitMessage << '\n';
+	}
+
+	// Debug function that uses only if debug_mode on, in game.cpp
+	[[maybe_unused]] void printDebugSecretNumberMessage(const int secretNumber)
+	{
+		std::cout << Constants::debugShowSecretNumberMessage << secretNumber << '\n';
 	}
 }
